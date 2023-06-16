@@ -1,0 +1,40 @@
+.barra{
+    background-color: #0eefe4;
+    background-image: linear-gradient(85deg, #0eefe4 0%, #eaedfc 50%, #c5ce23 100%);
+    font-size: 25px;
+}
+.m1{
+    color: rgb(231, 30, 3);
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgb(243, 243, 237), 0 0 5rem rgb(210, 229, 3), 0 0 0.2em rgb(249, 246, 246);;
+}
+.m2{
+    color: rgb(32, 18, 153);
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgb(212, 212, 2), 0 0 5rem rgb(229, 3, 139), 0 0 0.2em rgb(223, 218, 218);;
+}
+.m3{
+    color: rgb(247, 239, 238);
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgb(89, 81, 233), 0 0 5rem rgb(210, 229, 3), 0 0 0.2em rgb(166, 35, 35);
+    
+}
+.sub1{
+    font-size: 20px;
+    background-color: #deedf5;
+    background-image: linear-gradient(180deg, #deedf5 0%, #e1aeb1 100%);
+    
+    
+}
+.sub2{
+    font-size: 20px;
+    background-color: #deedf5;
+    background-image: linear-gradient(180deg, #deedf5 0%, #e1aeb1 100%);
+    
+    
+}
+.t1{
+    color: rgb(14, 9, 9);
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgb(235, 235, 241), 0 0 5rem rgb(235, 220, 197), 0 0 0.2em rgb(233, 227, 227);
+}
