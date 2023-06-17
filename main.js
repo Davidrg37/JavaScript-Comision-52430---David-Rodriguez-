@@ -76,53 +76,45 @@ let boleto3 = Number(2000);
 let boleto4 = Number(2500);
 
 function decision(formatoSeleccionado, entradas){
+    let totalEntradas = 0;
     switch(formatoSeleccionado){
     case "2D":
-        let totalEntradas2D = Number((+(entradas)*(boleto1)));
-            console.log("El total a pagar por entradas es: " + totalEntradas2D  + " de pesos")
-            console.log(typeof totalEntradas2D)
+        totalEntradas = Number((+(entradas)*(boleto1)));
         console.log("--------------------->")
-        menu();
         break;
     case "3D":
-        let totalEntradas3D = Number((+(entradas)*(boleto2)));
-            console.log("El total a pagar por entradas es: " + totalEntradas3D  + " de pesos")
-            console.log(typeof totalEntradas3D)
+        totalEntradas = Number((+(entradas)*(boleto2)));
         console.log("--------------------->")
-        menu();
         break;
     case "4D":
-        let totalEntradas4D = Number((+(entradas)*(boleto3)));
-            console.log("El total a pagar por entradas es: " + totalEntradas4D  + " de pesos")
-            console.log(typeof totalEntradas4D)
+        totalEntradas4D = Number((+(entradas)*(boleto3)));
         console.log("--------------------->")
-        menu();
         break;
     case "Imax":
-        let totalEntradasImax = Number((+(entradas)*(boleto4)));
-            console.log("El total a pagar por entradas es: " + totalEntradasImax  + " de pesos")
-            console.log(typeof totalEntradasImax)
+        totalEntradasImax = Number((+(entradas)*(boleto4)));
         console.log("--------------------->")
-        menu();
         break;
     default:
         console.log("Operacion invalida")
     }
+
+    console.log("El total de las entradas es: " + totalEntradas + " de pesos")
+    menu()
 }
 
 
 
-function menu(){
+function menu(totalEntradas){
     let consulta = prompt("Desea añadir comida?")
     switch(consulta){
         case "Si":
-            opcionMenu()
+            opcionMenu(totalEntradas)
             console.log("--------------------->")
             break;
         default:
             console.log("Espere mientras calculamos el total a pagar")
             console.log("--------------------->")
-            totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax)
+            totalPagar(totalEntradas)
             final()
     }
 }
@@ -136,68 +128,48 @@ combo3 = combo1pop1sodaGrande = 4500;
 let combo4;
 combo4 = combo1popGrande2sodaMedianas = 6000; 
 
-function opcionMenu(menu){
+function opcionMenu(menu, totalEntradas){
     console.log("La opcion 1 tiene un precio de " + combo1 )
     console.log("La opcion 2 tiene un precio de " + combo2 )
     console.log("La opcion 3 tiene un precio de " + combo3 )
     console.log("La opcion 4 tiene un precio de " + combo4 );
-    comida()
+    comida(totalEntradas)
 }
 
-function comida(opcionMenu){
+function comida(opcionMenu, totalEntradas){
     let seleccionComida = Number(prompt("Indique numero de opción del combo que desea"))
     let cantidadComida = Number(prompt("Cuantos combos desea agregar"))
+    let totalComida = 0;
     if(seleccionComida == 1 && cantidadComida>0){
-        let totalComida = Number((+(combo1)*(cantidadComida)))
-        console.log("Usted selecciono " + cantidadComida + " combos" )
-        console.log("Total a pagar por comida: " + totalComida)
-        console.log(typeof totalComida)
+        totalComida = Number((+(combo1)*(cantidadComida)))
         console.log("--------------------->")
-        totalPagar()
-        final()
     } else if (seleccionComida == 2 && cantidadComida>0){
-        let totalComida = Number((+(combo2)*(cantidadComida)))
-        console.log("Total a pagar por comida: " + totalComida)
-        console.log(typeof totalComida)
-        totalPagar()
-        final()
+        totalComida = Number((+(combo2)*(cantidadComida)))
+        console.log("--------------------->")
     } else if(seleccionComida == 3 && cantidadComida>0){
-        let totalComida = Number((+(combo3)*(cantidadComida)))
-        console.log("Total a pagar por comida: " + totalComida)
-        console.log(typeof totalComida)
-        totalPagar()
-        final()
+        totalComida = Number((+(combo3)*(cantidadComida)))
+        console.log("--------------------->")
     } else if (seleccionComida == 4 && cantidadComida>0){
-        let totalComida = Number((+(combo4)*(cantidadComida)))
-        console.log("Total a pagar por comida: " + totalComida)
-        console.log(typeof totalComida)
-        totalPagar()
-        final()
+        totalComida = Number((+(combo4)*(cantidadComida)))
+        console.log("--------------------->")
     }
+
+    console.log("Total a pagar por comida: " + totalComida)
+    totalPagar(totalEntradas, totalComida)
 }
 
-function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida){
-    let total1 = totalEntradas2D + totalComida
-    let total2 = totalEntradas3D + totalComida
-    let total3 = totalEntradas4D + totalComida
-    let total4 = totalEntradasImax + totalComida
+function totalPagar(totalEntradas, totalComida){
+    let totalTodo = totalEntradas + totalComida
     console.log("--------------------->")
     console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
-    if(totalEntradas2D>=1 && totalComida>=0){
-        console.log("El total a pagar es " + total1  + " de pesos")
-    } 
-    else if (totalEntradas3D>=0 && totalComida>=0){
-        console.log("El total a pagar es " + total2  + " de pesos")
-    } else if (totalEntradas4D>=0 && totalComida>=0){
-        console.log("El total a pagar es " + total3  + " de pesos")
-    } else if (totalEntradasImax>=1 && totalComida>=0){
-        console.log("El total a pagar es " + total4  + " de pesos")
-    }
+        console.log("El total a pagar es " + totalTodo  + " de pesos")
+    
+    final(totalTodo)
 }
 
-function final(totalPagar){
+function final(totalTodo){
     console.log("--------------------->")
-    if(total1>0 || total2>0 || total3>0 || total4>0){
+    if(totalTodo>0){
     console.log("Su pedido ha sido realizado. Acerquese a las cajas a pagar, o escoga la opción de pagar al finalizar la operación, introduciendo el código que sale en pantalla")
     } else {
         console.log("Ha habido un problema al procesar su pedido. Por favor acerquese a una taquilla para poder realizar su orden.")}
