@@ -39,7 +39,7 @@ let form2 = "3D"
 let form3 = "4D"
 let form4 = "Imax"
 
-function formato(peli1){
+function formato(){
     console.log("En este horario, la pelicula esta disponible en formato " + form1)
     console.log("En este horario, la pelicula esta disponible en formato " + form2)
     console.log("En este horario, la pelicula esta disponible en formato " + form3)
@@ -99,17 +99,21 @@ function decision(formatoSeleccionado, entradas){
 
 
 function menu(totalEntradas){
+    const saldoEntradas = totalEntradas
+    // console.log("Total entradas " + totalEntradas)
     console.log("--------------------->")
     let consulta = prompt("Desea añadir comida?")
     switch(consulta){
         case "Si":
-            opcionMenu(totalEntradas)
+            opcionMenu(menu, totalEntradas)
             console.log("--------------------->")
             break;
-        default:
+        case "No":
             console.log("Espere mientras calculamos el total a pagar")
+            totalPagar()
+            break;
+        default:
             console.log("--------------------->")
-            totalPagar(totalEntradas)
     }
 }
 
@@ -123,6 +127,7 @@ let combo4;
 combo4 = combo1popGrande2sodaMedianas = 6000; 
 
 function opcionMenu(menu, totalEntradas){
+    // console.log("Total entradas " + totalEntradas)
     console.log("La opcion 1 tiene un precio de " + combo1 )
     console.log("La opcion 2 tiene un precio de " + combo2 )
     console.log("La opcion 3 tiene un precio de " + combo3 )
@@ -130,10 +135,12 @@ function opcionMenu(menu, totalEntradas){
     comida(totalEntradas)
 }
 
-function comida(opcionMenu, totalEntradas){
+function comida(totalEntradas){
+    // console.log("Total entradas " + totalEntradas)
     let seleccionComida = Number(prompt("Indique numero de opción del combo que desea"))
     let cantidadComida = Number(prompt("Cuantos combos desea agregar"))
     let totalComida = 0;
+
     if(seleccionComida == 1 && cantidadComida>0){
         totalComida = Number((+(combo1)*(cantidadComida)))
         console.log("--------------------->")
@@ -153,11 +160,18 @@ function comida(opcionMenu, totalEntradas){
 }
 
 function totalPagar(totalEntradas, totalComida){
+    // console.log("Total entradas " + totalEntradas)
+    console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
     let totalTodo = 0;
     totalTodo = totalComida + totalEntradas
+    let totalSoloEntradas = 0;
     console.log("--------------------->")
-    console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
+    if(totalEntradas>=0 && totalComida>0){
         console.log("El total a pagar es " + totalTodo + " de pesos")
+    } else if (isNaN(totalComida)) {
+        totalSoloEntradas = totalEntradas
+        console.log("El total a pagar es " + totalSoloEntradas + " de pesos")
+    }
     
     final(totalTodo)
 }
