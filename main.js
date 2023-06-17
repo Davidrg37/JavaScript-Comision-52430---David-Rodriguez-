@@ -182,14 +182,14 @@ function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntr
     let total3 = totalEntradas4D + totalComida
     let total4 = totalEntradasImax + totalComida
     console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
-    if(totalEntradas2D>0 && totalComida>=0){
+    if(totalEntradas2D>=1 && totalComida>=0){
         console.log("El total a pagar es " + total1  + " de pesos")
     } 
-    else if (totalEntradas3D>0 && totalComida>=0){
+    else if (totalEntradas3D>=0 && totalComida>=0){
         console.log("El total a pagar es " + total2  + " de pesos")
-    } else if (totalEntradas4D>0 && totalComida>=0){
+    } else if (totalEntradas4D>=0 && totalComida>=0){
         console.log("El total a pagar es " + total3  + " de pesos")
-    } else if (totalEntradasImax>0 && totalComida>=0){
+    } else if (totalEntradasImax>=1 && totalComida>=0){
         console.log("El total a pagar es " + total4  + " de pesos")
     }
 }
