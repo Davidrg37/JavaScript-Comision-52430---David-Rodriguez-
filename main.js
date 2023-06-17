@@ -181,6 +181,7 @@ function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntr
     let total2 = totalEntradas3D + totalComida
     let total3 = totalEntradas4D + totalComida
     let total4 = totalEntradasImax + totalComida
+    console.log("--------------------->")
     console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
     if(totalEntradas2D>=1 && totalComida>=0){
         console.log("El total a pagar es " + total1  + " de pesos")
@@ -195,6 +196,7 @@ function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntr
 }
 
 function final(totalPagar){
+    console.log("--------------------->")
     if(totalPagar>0){
     console.log("Su pedido ha sido realizado. Acerquese a las cajas a pagar, o escoga la opción de pagar al finalizar la operación, introduciendo el código que sale en pantalla")
     } else {
