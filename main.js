@@ -99,12 +99,13 @@ function decision(formatoSeleccionado, entradas){
     }
 
     console.log("El total de las entradas es: " + totalEntradas + " de pesos")
-    menu()
+    menu(totalEntradas)
 }
 
 
 
 function menu(totalEntradas){
+    console.log("--------------------->")
     let consulta = prompt("Desea añadir comida?")
     switch(consulta){
         case "Si":
