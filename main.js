@@ -99,7 +99,7 @@ function decision(formatoSeleccionado, entradas){
         menu();
         break;
     case "Imax":
-        let totalEntradaImax = Number((+(entradas)*(boleto4)));
+        let totalEntradasImax = Number((+(entradas)*(boleto4)));
             console.log("El total a pagar por entradas es: " + totalEntradasImax  + " de pesos")
             console.log(typeof totalEntradas2D)
         console.log("--------------------->")
@@ -153,41 +153,41 @@ function comida(opcionMenu){
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
         console.log("--------------------->")
-        totalPagar(totalPagar)
+        totalPagar()
         final()
     } else if (seleccionComida == 2 && cantidadComida>0){
         let totalComida = Number((+(combo2)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalPagar)
+        totalPagar()
         final()
     } else if(seleccionComida == 3 && cantidadComida>0){
         let totalComida = Number((+(combo3)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalPagar)
+        totalPagar()
         final()
     } else if (seleccionComida == 4 && cantidadComida>0){
         let totalComida = Number((+(combo4)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalPagar)
+        totalPagar()
         final()
     }
 }
 
-function totalPagar(totalComida, decision, totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax){
-    let total1 = Number(+(totalEntradas2D)+(totalComida))
-    let total2 = Number(+(totalEntradas3D)+(totalComida))
-    let total3 = Number(+(totalEntradas4D)+(totalComida))
-    let total4 = Number(+(totalEntradasImax)+(totalComida))
+function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida){
+    let total1 = totalEntradas2D + totalComida
+    let total2 = totalEntradas3D + totalComida
+    let total3 = totalEntradas4D + totalComida
+    let total4 = totalEntradasImax + totalComida
     console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
     if(totalEntradas2D>0 && totalComida>=0){
         console.log("El total a pagar es " + total1  + " de pesos")
     } 
     else if (totalEntradas3D>0 && totalComida>=0){
         console.log("El total a pagar es " + total2  + " de pesos")
-    } else if (totalEntradas3D>0 && totalComida>=0){
+    } else if (totalEntradas4D>0 && totalComida>=0){
         console.log("El total a pagar es " + total3  + " de pesos")
     } else if (totalEntradasImax>0 && totalComida>=0){
         console.log("El total a pagar es " + total4  + " de pesos")
