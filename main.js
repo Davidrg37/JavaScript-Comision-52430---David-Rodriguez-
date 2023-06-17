@@ -94,14 +94,14 @@ function decision(formatoSeleccionado, entradas){
     case "4D":
         let totalEntradas4D = Number((+(entradas)*(boleto3)));
             console.log("El total a pagar por entradas es: " + totalEntradas4D  + " de pesos")
-            console.log(typeof totalEntradas2D)
+            console.log(typeof totalEntradas4D)
         console.log("--------------------->")
         menu();
         break;
     case "Imax":
         let totalEntradasImax = Number((+(entradas)*(boleto4)));
             console.log("El total a pagar por entradas es: " + totalEntradasImax  + " de pesos")
-            console.log(typeof totalEntradas2D)
+            console.log(typeof totalEntradasImax)
         console.log("--------------------->")
         menu();
         break;
@@ -122,7 +122,7 @@ function menu(){
         default:
             console.log("Espere mientras calculamos el total a pagar")
             console.log("--------------------->")
-            totalPagar(total1, total2, total3, total4)
+            totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax)
             final()
     }
 }
@@ -153,25 +153,25 @@ function comida(opcionMenu){
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
         console.log("--------------------->")
-        totalPagar(total1, total2, total3, total4)
+        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
         final()
     } else if (seleccionComida == 2 && cantidadComida>0){
         let totalComida = Number((+(combo2)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(total1, total2, total3, total4)
+        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
         final()
     } else if(seleccionComida == 3 && cantidadComida>0){
         let totalComida = Number((+(combo3)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(total1, total2, total3, total4)
+        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
         final()
     } else if (seleccionComida == 4 && cantidadComida>0){
         let totalComida = Number((+(combo4)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(total1, total2, total3, total4)
+        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
         final()
     }
 }
