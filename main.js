@@ -153,25 +153,25 @@ function comida(opcionMenu){
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
         console.log("--------------------->")
-        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
+        totalPagar()
         final()
     } else if (seleccionComida == 2 && cantidadComida>0){
         let totalComida = Number((+(combo2)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
+        totalPagar()
         final()
     } else if(seleccionComida == 3 && cantidadComida>0){
         let totalComida = Number((+(combo3)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
+        totalPagar()
         final()
     } else if (seleccionComida == 4 && cantidadComida>0){
         let totalComida = Number((+(combo4)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntradasImax, totalComida)
+        totalPagar()
         final()
     }
 }
