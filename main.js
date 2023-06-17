@@ -122,7 +122,7 @@ function menu(){
         default:
             console.log("Espere mientras calculamos el total a pagar")
             console.log("--------------------->")
-            totalPagar(totalPagar)
+            totalPagar(total1, total2, total3, total4)
             final()
     }
 }
@@ -153,25 +153,25 @@ function comida(opcionMenu){
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
         console.log("--------------------->")
-        totalPagar()
+        totalPagar(total1, total2, total3, total4)
         final()
     } else if (seleccionComida == 2 && cantidadComida>0){
         let totalComida = Number((+(combo2)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar()
+        totalPagar(total1, total2, total3, total4)
         final()
     } else if(seleccionComida == 3 && cantidadComida>0){
         let totalComida = Number((+(combo3)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar()
+        totalPagar(total1, total2, total3, total4)
         final()
     } else if (seleccionComida == 4 && cantidadComida>0){
         let totalComida = Number((+(combo4)*(cantidadComida)))
         console.log("Total a pagar por comida: " + totalComida)
         console.log(typeof totalComida)
-        totalPagar()
+        totalPagar(total1, total2, total3, total4)
         final()
     }
 }
@@ -197,7 +197,7 @@ function totalPagar(totalEntradas2D, totalEntradas3D, totalEntradas4D, totalEntr
 
 function final(totalPagar){
     console.log("--------------------->")
-    if(totalPagar>0){
+    if(total1>0 || total2>0 || total3>0 || total4>0){
     console.log("Su pedido ha sido realizado. Acerquese a las cajas a pagar, o escoga la opción de pagar al finalizar la operación, introduciendo el código que sale en pantalla")
     } else {
         console.log("Ha habido un problema al procesar su pedido. Por favor acerquese a una taquilla para poder realizar su orden.")}
