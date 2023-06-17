@@ -52,22 +52,17 @@ function seleccionarFormato(formato){
     let formatoSeleccionado = prompt("Inserte el formato en el cual desea ver la pelicula")
     if(formatoSeleccionado == form1){
         console.log("La pelicula es subtitulada");
-        let entradas = Number(prompt("Inserte la cantidad de entradas que deseas"))
-        console.log("Usted selecciono " + entradas + " asientos")
-        decision(formatoSeleccionado, entradas)
     } else if (formatoSeleccionado == form2 || formato == form4 ){
         console.log("La pelicula esta disponible es en español");
-        let entradas = Number(prompt("Inserte la cantidad de entradas que deseas"))
-        console.log("Usted selecciono " + entradas + " asientos")
-        decision(formatoSeleccionado, entradas)
     } else if (formatoSeleccionado == form3){
         console.log("La pelicula es subtitulada");
-        let entradas = Number(prompt("Inserte la cantidad de entradas que deseas"))
-        console.log("Usted selecciono " + entradas + " asientos")
-        decision(formatoSeleccionado, entradas)
     } else {
         console.log("Formato incorrecto. Seleccione un formato disponible");
     }
+
+    let entradas = Number(prompt("Inserte la cantidad de entradas que deseas"))
+    console.log("Usted selecciono " + entradas + " asientos")
+    decision(formatoSeleccionado, entradas)
 }
 
 let boleto1 = Number(900);
@@ -97,7 +92,6 @@ function decision(formatoSeleccionado, entradas){
     default:
         console.log("Operacion invalida")
     }
-
     console.log("El total de las entradas es: " + totalEntradas + " de pesos")
     menu(totalEntradas)
 }
@@ -116,7 +110,6 @@ function menu(totalEntradas){
             console.log("Espere mientras calculamos el total a pagar")
             console.log("--------------------->")
             totalPagar(totalEntradas)
-            final()
     }
 }
 
@@ -160,10 +153,11 @@ function comida(opcionMenu, totalEntradas){
 }
 
 function totalPagar(totalEntradas, totalComida){
-    let totalTodo = totalEntradas + totalComida
+    let totalTodo = 0;
+    totalTodo = totalComida + totalEntradas
     console.log("--------------------->")
     console.log("Aguarde un momento, estamos calculando el total de lo que usted selecciono")
-        console.log("El total a pagar es " + totalTodo  + " de pesos")
+        console.log("El total a pagar es " + totalTodo + " de pesos")
     
     final(totalTodo)
 }
