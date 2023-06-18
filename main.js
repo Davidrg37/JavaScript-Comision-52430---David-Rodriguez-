@@ -110,7 +110,7 @@ function menu(totalEntradas){
             break;
         case "No":
             console.log("Espere mientras calculamos el total a pagar")
-            totalPagar()
+            totalPagar(totalEntradas)
             break;
         default:
             console.log("--------------------->")
