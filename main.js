@@ -110,7 +110,7 @@ function menu(totalEntradas){
             break;
         case "No":
             console.log("Espere mientras calculamos el total a pagar")
-            totalPagar()
+            totalPagar(totalEntradas)
             break;
         default:
             console.log("--------------------->")
@@ -165,6 +165,7 @@ function totalPagar(totalEntradas, totalComida){
     let totalTodo = 0;
     totalTodo = totalComida + totalEntradas
     let totalSoloEntradas = 0;
+    totalSoloEntradas = totalEntradas
     console.log("--------------------->")
     if(totalEntradas>=0 && totalComida>0){
         console.log("El total a pagar es " + totalTodo + " de pesos")
@@ -173,12 +174,12 @@ function totalPagar(totalEntradas, totalComida){
         console.log("El total a pagar es " + totalSoloEntradas + " de pesos")
     }
     
-    final(totalTodo)
+    final(totalTodo, totalSoloEntradas)
 }
 
-function final(totalTodo){
+function final(totalTodo, totalSoloEntradas){
     console.log("--------------------->")
-    if(totalTodo>0){
+    if(totalTodo>0 || totalSoloEntradas>0){
     console.log("Su pedido ha sido realizado. Acerquese a las cajas a pagar, o escoga la opción de pagar al finalizar la operación, introduciendo el código que sale en pantalla")
     } else {
         console.log("Ha habido un problema al procesar su pedido. Por favor acerquese a una taquilla para poder realizar su orden.")}
